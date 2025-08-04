@@ -38,8 +38,7 @@ When Not to Use It:
 If the data isn’t sorted and can’t be made sorted without breaking the problem.
 If the relationship between elements isn’t order-based (e.g., arbitrary graphs).
 
-Example: 
-Pair sum in a sorted array
+Example: Pair sum in a sorted array
 Problem: Given a sorted array, find if there are two numbers that add up to a target.
 
 def has_pair_with_sum(arr, target):
@@ -58,5 +57,5 @@ def has_pair_with_sum(arr, target):
 This runs in O(n) instead of O(n²).
 
 Key advantages:
-Efficiency: Often reduces time complexity from quadratic to linear.
-Simplicity: Straightforward to implement once you see the pattern.
+- Efficiency: Often reduces time complexity from quadratic to linear.
+- Simplicity: Straightforward to implement once you see the pattern.
