@@ -1,39 +1,39 @@
 Backtracking Algorithm
 
-Backtracking is a general algorithmic technique for solving problems incrementally, building candidates to the solutions, and abandoning a candidate (“backtracking”) as soon as it determines that this candidate cannot possibly lead to a valid solution. 
-It’s like exploring all possible options in a search tree but pruning paths early to avoid unnecessary work.
+Definition:
+A technique that builds solutions incrementally and abandons a candidate as soon as it determines it cannot lead to a valid solution, effectively pruning the search space.
 
-When to Use Backtracking:
-- The problem involves exploring all or many combinations, permutations, or subsets.
-- You need to build solutions step-by-step and undo (“backtrack”) choices to explore alternative paths.
-- The problem has constraints that allow pruning of invalid partial solutions early.
+Key Idea:
+Explore all possible options step-by-step, and backtrack (undo) choices when they fail constraints, to systematically find all valid solutions.
 
-Common Characteristics:
-- Incremental Construction: Build solutions one piece at a time.
-- Choice and Exploration: At each step, try all possible options.
-- Backtrack: If a partial solution fails constraints, revert the last choice and try other options.
-- Often implemented using recursion.
+When to Use:
 
-Often Used In:
-- Combinatorial problems (permutations, combinations, subsets).
-- Constraint satisfaction problems (e.g., Sudoku, N-Queens).
-- String parsing and generation (e.g., generating letter combinations).
+- When you need to explore many or all combinations, permutations, or subsets.
+- When building solutions step-by-step and undoing choices to explore alternatives.
+- When constraints allow early pruning of invalid partial solutions.
 
-When Not to Use It:
-- Problems that can be solved greedily or with dynamic programming more efficiently.
-- When the search space is too large without effective pruning.
+Steps / Approach:
 
-Example: Letter Combinations of a Phone Number
-- Map digits to letters.
-- Recursively build strings by choosing one letter per digit.
-- When the string length equals input digits length, add it to results.
-- Backtrack by removing the last chosen letter and trying other letters.
+1. Start building a solution incrementally.
+2. At each step, try all possible choices.
+3. If a partial solution violates constraints, backtrack by undoing the last choice.
+4. Continue until a complete valid solution is formed or all options are exhausted.
+
+Example Problems:
+
+- Generating letter combinations from phone digits.
+- Solving Sudoku puzzles.
+- N-Queens problem.
+- Generating permutations and subsets.
 
 Key Advantages:
-- Systematic exploration of all candidate solutions.
-- Can handle complex constraints by pruning invalid paths early.
-- Simple to implement for many combinatorial problems.
 
-Key Disadvantages:
-- Potentially exponential time complexity in worst case.
-- Can be slow without pruning or optimizations.
+- Systematically explores all candidate solutions.
+- Efficient pruning of invalid paths reduces unnecessary work.
+- Flexible and easy to implement for many combinatorial problems.
+
+Time Complexity:
+Potentially exponential (O(k^n)) in the worst case, depending on the branching factor and depth of recursion.
+
+Space Complexity:
+O(n) for recursion stack and temporary data structures used during solution construction.

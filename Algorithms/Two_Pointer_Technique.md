@@ -1,61 +1,42 @@
 Two Pointer Technique
 
-The two pointer technique is a common approach where you use two variables (pointers or indices) to traverse a data structure, usually an array or string, from different positions. 
-Instead of looping through everything with nested loops, two pointers can often reduce time complexity from O(n²) to O(n).
+Definition:
+A method that uses two pointers (indices) to traverse a data structure like an array or string from different positions, often to reduce nested loops into a single pass.
 
-When to Use Two Pointers:
-1. The data is sorted or can be treated in a sorted way
-   Sorting allows you to move the pointers intelligently (e.g., left increases, right decreases) instead of checking all pairs.
-2. You need to find a pair or group of elements that meet a condition
-   Examples:
-   - Find two numbers that add up to a target sum.
-   - Find the closest pair to a target.
-   - Remove duplicates from a sorted array.
-3. You need to scan from both ends or move through a range
-   Pointers can start:
-   - Both at the beginning (fast/slow pointers)
-   - One at the start and one at the end (shrinking window)
-   - One leading and one trailing (sliding window)
-4. You want to avoid extra memory
-   This method usually works in-place, no need for additional data structures.
+Key Idea:
+Use two pointers moving toward each other or at different speeds to efficiently find pairs, groups, or windows that satisfy conditions without checking all combinations.
 
-Types of Two-Pointer Patterns:
-1. Opposite Ends (Converging)
-   Start with one pointer at the beginning and one at the end.
-   Move them towards each other depending on conditions.
-   Example:
-   - Given a sorted array, find two numbers whose sum equals a target.
+When to Use:
 
-2. Same Direction (Fast/Slow or Sliding Window)
-   Both pointers move forward, but at different speeds or one adjusts to maintain a window.
-   Example:
-   - Detect a cycle in a linked list (Floyd’s algorithm) or find the longest substring without repeating characters.
+- When the data is sorted or can be treated as sorted.
+- Finding pairs or groups meeting a condition (e.g., sum equals target).
+- Scanning from both ends or maintaining a sliding window.
+- Avoiding extra memory by working in-place.
 
-Why It Works:
-Instead of brute forcing every combination, two pointers exploit structure (like sorting or the contiguous nature of a string) to skip unnecessary work.
+Steps / Approach:
 
-When Not to Use It:
-If the data isn’t sorted and can’t be made sorted without breaking the problem.
-If the relationship between elements isn’t order-based (e.g., arbitrary graphs).
+1. Initialize two pointers at relevant positions (start/end or both start
+2. Move pointers based on problem logic:
+   - Converging pointers move inward depending on conditions.
+   - Same-direction pointers move forward at different speeds or adjust to maintain a window.
+3. Check conditions at each step and update pointers accordingly.
+4. Continue until pointers meet or the problem’s stopping condition is met.
 
-Example: Pair sum in a sorted array
-Problem: Given a sorted array, find if there are two numbers that add up to a target.
+Example Problems:
 
-def has_pair_with_sum(arr, target):
-    left = 0
-    right = len(arr) - 1
+- Find two numbers in a sorted array whose sum equals a target.
+- Detect cycle in a linked list (fast and slow pointers).
+- Remove duplicates from a sorted array.
+- Find the longest substring without repeating characters.
 
-    while left < right:
-        s = arr[left] + arr[right]
-        if s == target:
-            return True
-        elif s < target:
-            left += 1  # need a bigger sum
-        else:
-            right -= 1  # need a smaller sum
-    return False
-This runs in O(n) instead of O(n²).
+Key Advantages:
 
-Key advantages:
-- Efficiency: Often reduces time complexity from quadratic to linear.
-- Simplicity: Straightforward to implement once you see the pattern.
+- Improves efficiency by reducing time complexity from O(n²) to O(n).
+- Simple to implement once pattern is recognized.
+- Works in-place without extra memory overhead.
+
+Time Complexity:
+Typically O(n), where n is the length of the input. This depends on a single pass or linear traversal using the two pointers.
+
+Space Complexity:
+O(1) extra space, since it uses pointers and usually modifies or reads the input in-place.
