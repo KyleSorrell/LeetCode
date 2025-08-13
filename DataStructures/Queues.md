@@ -3,10 +3,10 @@ Queues
 A queue is a linear data structure that follows FIFO (First In, First Out) order: First element added → first element removed
 
 Core Operations:
-Enqueue: Add an element to the rear of the queue. O(1)
-Dequeue: Remove an element from the front. O(1)
-Peek/Front: Look at the element at the front without removing. O(1)
-IsEmpty: Check if the queue has no elements. O(1)
+- Enqueue: Add an element to the rear of the queue. O(1)
+- Dequeue: Remove an element from the front. O(1)
+- Peek/Front: Look at the element at the front without removing. O(1)
+- IsEmpty: Check if the queue has no elements. O(1)
 
 Types of Queues:
 1. Simple Queue
@@ -47,3 +47,4 @@ Pros:
 Cons:
 - Fixed-size array queues may waste space
 - Circular arrays require careful index handling
+
