@@ -35,13 +35,13 @@ Transition Logic (Iterative / Pointer Manipulation):
 3. Reverse nodes from groupPrev.next up to groupNext:
 
 - For each node curr in the group:
-  > temp = curr.next
-  > curr.next = prev
-  > prev = curr
-  > curr = temp
+  - temp = curr.next
+  - curr.next = prev
+  - prev = curr
+  - curr = temp
 
 4. Reconnect the reversed group:
-   > temp = groupPrev.next
-   > groupPrev.next = kth
-   > groupPrev = temp
+   - temp = groupPrev.next
+   - groupPrev.next = kth
+   - groupPrev = temp
 5. Repeat for the next group.
